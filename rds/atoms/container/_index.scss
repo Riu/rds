@@ -1,0 +1,32 @@
+@use '../../quarks/breakpoint/index' as breakpoint;
+
+@mixin container {
+  .container{
+    @include breakpoint.breakpoint(xs) {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    @include breakpoint.breakpoint(sm) {
+      width: 540px;
+      margin: auto;
+    }
+    @include breakpoint.breakpoint(md) {
+      width: 720px;
+    }
+    @include breakpoint.breakpoint(lg) {
+      width: 960px;
+    }
+    @include breakpoint.breakpoint(xl) {
+      width: 1140px;
+    }
+    @include breakpoint.breakpoint(xxl) {
+      width: 1320px;
+    }
+    &-fluid{
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

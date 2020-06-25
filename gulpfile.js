@@ -5,7 +5,7 @@ const sass = require('gulp-sass')
 const rename = require('gulp-rename')
 const nodemon = require('gulp-nodemon')
 const argv = require('yargs').argv;
-sass.compiler = require('node-sass')
+sass.compiler = require('sass')
 
 function compile () {
   const theme = argv.theme !== undefined ? argv.theme : 'default'

@@ -2,11 +2,12 @@
 @use '../../rds' as rds;
 
 // Quarks
-@include rds.font-primary;
+@include rds.font;
 @include rds.sanitize;
-@include rds.logo;
 
 // Atoms
+@include rds.logo;
+@include rds.container;
 
 // Molecules
 
