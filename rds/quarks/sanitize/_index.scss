@@ -1,0 +1,10 @@
+@use './sanitize';
+@use './typography';
+@use './forms';
+
+@mixin sanitize {
+  @include sanitize.sanitize-sanitize;
+  @include typography.sanitize-typography;
+  @include forms.sanitize-forms;
+}
+

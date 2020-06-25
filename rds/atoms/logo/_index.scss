@@ -1,0 +1,20 @@
+@mixin logo {
+  .logo{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    span{
+      display: block;
+      margin-left: 8px;
+      &:first-child{
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-left: 0px;
+      }
+    }
+    &.vertical{
+      flex-direction: column;
+    }
+  }
+}
+  
