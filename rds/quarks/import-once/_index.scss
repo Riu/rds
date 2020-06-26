@@ -1,0 +1,72 @@
+@mixin exports($name, $type) {
+  @if (index($rds-modules, $name) == null) {
+    $rds-modules: append($rds-modules, $name) !global;
+    @if $type == quarks {
+      $rds-quarks: append($rds-quarks, $name) !global;
+    } @else if $type == atoms {
+      $rds-atoms: append($rds-atoms, $name) !global;
+    } @else if $type == molecules {
+      $rds-molecules: append($rds-molecules, $name) !global;
+    } @else if $type == organisms {
+      $rds-organisms: append($rds-organisms, $name) !global;
+    } @else {
+      @error "Unknown type #{$type}.";
+    }
+    @content;
+  }
+}
+
+@mixin rds-import-debug {
+  .rds-debug{
+    background-color: #f5f5f5;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    width: 100%;
+    display: block;
+    margin-top: 5px;
+    padding: 4px 8px;
+    &::after{
+      display: none;
+    }
+    &::before{
+      min-width: 120px;
+      display: inline-block;
+      font-weight: 200;
+    }
+    &-modules::after{
+      content: '#{$rds-modules}';
+    }
+    &-modules::before{
+      min-width: 100px;
+      content: 'All: ';
+    }
+    &-quarks::after{
+      content: '#{$rds-quarks}';
+    }
+    &-quarks::before{
+      content: 'Quarks: ';
+    }
+    &-atoms::after{
+      content: '#{$rds-atoms}';
+    }
+    &-atoms::before{
+      content: 'Atoms: ';
+    }
+    &-molecules::after{
+      content: '#{$rds-molecules}';
+    }
+    &-molecules::before{
+      content: 'Molecules: ';
+    }
+    &-organisms::after{
+      content: '#{$rds-organisms}';
+    }
+    &-organisms::before{
+      content: 'Organisms: ';
+    }
+    a{
+      text-decoration: none;
+      margin-right: 8px;;
+    }
+  }
+}

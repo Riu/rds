@@ -1,10 +1,17 @@
+@use '../import-once/index' as importonce;
 @use './sanitize';
 @use './typography';
 @use './forms';
 
 @mixin sanitize {
+  @include importonce.exports('sanitize', 'quarks') {
+    @include get-sanitaze;
+  }
+}
+
+@mixin get-sanitaze {
+  @include importonce.exports('import-once', 'quarks');
   @include sanitize.sanitize-sanitize;
   @include typography.sanitize-typography;
   @include forms.sanitize-forms;
 }
-

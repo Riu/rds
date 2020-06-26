@@ -1,4 +1,9 @@
-@mixin logo {
+
+  
+@use '../../quarks/import-once/index' as importonce;
+
+@mixin get-logo {
+  @include importonce.exports('import-once', 'quarks');
   .logo{
     display: flex;
     flex-direction: row;
@@ -24,4 +29,9 @@
     }
   }
 }
-  
+
+@mixin logo {
+  @include importonce.exports('logo', 'atoms') {
+    @include get-logo;
+  }
+}

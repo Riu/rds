@@ -4,3 +4,10 @@
 @forward './organisms/index';
 @forward './templates/index';
 @forward './pages/index';
+
+// Variables of element's sets
+$rds-modules: () !default;
+$rds-quarks: () !default;
+$rds-atoms: () !default;
+$rds-molecules: () !default;
+$rds-organisms: () !default;

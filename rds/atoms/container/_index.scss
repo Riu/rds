@@ -1,6 +1,9 @@
 @use '../../quarks/breakpoint/index' as breakpoint;
+@use '../../quarks/import-once/index' as importonce;
 
-@mixin container {
+@mixin get-container {
+  @include importonce.exports('breakpoint', 'quarks');
+  @include importonce.exports('import-once', 'quarks');
   .container{
     @include breakpoint.breakpoint(xs) {
       width: 100%;
@@ -28,5 +31,11 @@
       margin: 0;
       padding: 0;
     }
+  }
+}
+
+@mixin container {
+  @include importonce.exports('container', 'atoms') {
+    @include get-container;
   }
 }

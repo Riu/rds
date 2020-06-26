@@ -1,8 +1,18 @@
+@use '../import-once/index' as importonce;
+
 $font-primary: 'Cairo' !default;
 
-@mixin font{
+@mixin get-font {
+  @include importonce.exports('import-once', 'quarks');
   @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700&display=swap');
   body{
     font-family: $font-primary, sans-serif;
   }
 }
+
+@mixin font{
+  @include importonce.exports('font', 'quarks') {
+    @include get-font;
+  }
+}
+
