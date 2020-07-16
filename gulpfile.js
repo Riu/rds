@@ -20,7 +20,7 @@ function compile () {
 task('default', () => {
   nodemon({
     script: 'app.js',
-    ext: 'js',
+    ext: 'js, html',
     env: {
       PORT: 3000
     },

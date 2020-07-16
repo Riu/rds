@@ -1,0 +1,31 @@
+
+  
+@use '../../quarks/import-once/index' as importonce;
+
+@mixin get-list {
+  @include importonce.exports('import-once', 'quarks');
+  .list{
+    display: grid;
+    margin: 0;
+    padding: 0;
+    grid-template-columns: auto;
+    justify-content: end;
+    width: 100%;
+    &-horizontal{
+      grid-template-rows: auto;
+      grid-auto-flow: column;
+      grid-template-rows: unset;
+    }
+    &-vertical{
+      grid-template-columns: unset;
+      grid-auto-flow: row;
+      grid-template-rows: auto;
+    }
+  }
+}
+
+@mixin list {
+  @include importonce.exports('list', 'atoms') {
+    @include get-list;
+  }
+}

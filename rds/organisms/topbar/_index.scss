@@ -1,0 +1,35 @@
+
+  
+@use '../../quarks/import-once/index' as importonce;
+@use '../../quarks/breakpoint/index' as breakpoint;
+
+/* Tutaj jest jest jakiś kod dla mobile */
+
+@mixin get-topbar {
+  @include importonce.exports('import-once', 'quarks');
+  .topbar{
+    height: auto;
+    grid-template-areas:
+    "left"
+    "right";
+    &:first-child{
+      grid-area: left;
+    }
+    &:last-child{
+      grid-area: right;
+    }
+  }
+  @include breakpoint.breakpoint(md) {
+    .topbar{
+      height: 65px;
+      grid-template-areas:
+      "left right";
+    }
+  }
+}
+
+@mixin topbar {
+  @include importonce.exports('topbar', 'organisms') {
+    @include get-topbar;
+  }
+}

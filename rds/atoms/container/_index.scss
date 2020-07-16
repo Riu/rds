@@ -8,9 +8,10 @@
     @include breakpoint.breakpoint(xs) {
       width: 100%;
       margin: 0;
-      padding: 0;
+      padding: 0 16px;
     }
     @include breakpoint.breakpoint(sm) {
+      padding: 0px;
       width: 540px;
       margin: auto;
     }

@@ -1,0 +1,36 @@
+@use '../import-once/index' as importonce;
+@use '../colors/index' as colors;
+@use '../font/index' as font;
+
+@mixin get-typography {
+  body{
+    font-family: font.$font-primary, sans-serif;
+    color: colors.$dark-gray-dark;
+  }
+  a{
+    color: colors.$blue-jeans-dark;
+    text-decoration: none;
+    &:hover{
+      color: colors.$blue-jeans-dark;
+      text-decoration: none;
+    }
+  }
+  code,
+  kbd,
+  samp {
+    font-size: 0.8rem;
+    padding: 1px 4px;
+    background-color: colors.$light-gray-dark;
+    border-radius: 4px;
+    margin-right: 2px;
+  }
+}
+
+@mixin typography{
+  @include importonce.exports('import-once', 'quarks');
+  @include importonce.exports('colors', 'quarks');
+  @include importonce.exports('typography', 'quarks') {
+    @include get-typography;
+  }
+}
+

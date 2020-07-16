@@ -1,2 +1,3 @@
 # Templates
 
+Szablony są prezentacją - makietą składającą się z organizmów i molekuł, w której nie ma prawdziwych danych, a tzw. zaślepki - placeholdery, które wcześniej zostały umieszczone w składowych molekuł czy organizmów. Są one jednak szablonami pokazującymi jak ma wyglądać wybrana strona. Szablony mogą do siebie linkować przez co imitują przepływy działań użytkownika z plikacji. Szablony posiadają swoj routing.

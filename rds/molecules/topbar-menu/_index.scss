@@ -1,0 +1,47 @@
+
+  
+@use '../../quarks/import-once/index' as importonce;
+@use '../../quarks/breakpoint/index' as breakpoint;
+
+@mixin get-topbar-menu {
+  @include importonce.exports('import-once', 'quarks');
+  .topbar-menu{
+    margin: 0;
+    padding: 0;
+    justify-content: start;
+    width: 100%;
+    grid-auto-flow: column;
+    column-gap: 12px;
+    row-gap: 0px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 10px;
+    > li{
+      list-style-type: none;
+      width: auto;
+      word-break: keep-all;
+      a{
+        font-size: 1rem;
+        font-weight: 600;
+      }
+    }
+  }
+  @include breakpoint.breakpoint(md) {
+    .topbar-menu{
+      overflow-x: hidden;
+      padding: 0;
+      justify-content: end;
+      > li{
+        a{
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
+
+@mixin topbar-menu {
+  @include importonce.exports('topbar-menu', 'molecules') {
+    @include get-topbar-menu;
+  }
+}

@@ -30,6 +30,7 @@ app.get('/docs', (req, res, next) => {
   const data = fs.readFileSync(`./README.md`, {encoding:'utf8', flag:'r'}); 
   res.render('docs/index', { html: data })
 })
+
 app.get('/docs/:module', (req, res, next) => {
   const module = req.params.module
   const data = fs.readFileSync(`./rds/${module}/README.md`, {encoding:'utf8', flag:'r'}); 

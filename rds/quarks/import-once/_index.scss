@@ -17,6 +17,9 @@
 }
 
 @mixin rds-import-debug {
+  .rds-debug-container{
+    margin-bottom: 15px;
+  }
   .rds-debug{
     background-color: #f5f5f5;
     border: 1px solid #eee;
@@ -63,6 +66,9 @@
     }
     &-organisms::before{
       content: 'Organisms: ';
+    }
+    &:last-child{
+      margin-bottom: 20px;
     }
     a{
       text-decoration: none;
