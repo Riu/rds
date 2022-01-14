@@ -1,7 +1,7 @@
 'use strict'
 
 const { task, watch, series, dest, src } = require('gulp')
-const sass = require('gulp-sass')
+const sass = require('gulp-sass')(require('sass'))
 const rename = require('gulp-rename')
 const nodemon = require('gulp-nodemon')
 const argv = require('yargs').argv;
